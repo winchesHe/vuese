@@ -104,7 +104,7 @@ export function computesFromStore(node: any): boolean {
     } else {
       fromStore = computesFromStore(node.object)
     }
-  } else if (bt.isReturnStatement(node) || node.type.includes('Expression')) {
+  } else if (bt.isReturnStatement(node) || node?.type.includes('Expression')) {
     fromStore = computesFromStore(node.argument)
   }
 
